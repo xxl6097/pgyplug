@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#303F9F</color>
+
+    <color name="color_app_themes">#303F9F</color>
+    <color name="cyan">#9ddce2</color>
+    <color name="pink">#ff51ca</color>
+    <color name="cyan2">#8BE3EC</color>
+    <color name="purple">#d642fd</color>
+    <color name="yellow">#ebdc88</color>
+    <color name="cyan3">#88b2eb</color>
+    <color name="translucent">#55999999</color>
+
+</resources>
