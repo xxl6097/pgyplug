@@ -55,7 +55,7 @@ public class AppUpdate {
                         sb.append(activity.getString(R.string.update_content));
                         sb.append("\r\n");
                         sb.append(appBean.getReleaseNote());
-                        AlertDialog myDialog = new AlertDialog.Builder(activity).create();;
+                       final AlertDialog myDialog = new AlertDialog.Builder(activity).create();;
                         if (!myDialog.isShowing()) {
                             myDialog.show();
                             myDialog.getWindow().setContentView(R.layout.updatedlg);
