@@ -19,21 +19,23 @@ import com.pgyersdk.update.UpdateManagerListener;
  */
 
 public class AppUpdate {
-    static AlertDialog myDialog = null;
+    //static AlertDialog myDialog = null;
 
     public static void init(Context context) {
         PgyCrashManager.register(context);
     }
 
     public static void checkUpdateVersion(final Activity activity) {
-        if (myDialog == null) {
+        /*if (myDialog == null) {
             myDialog = new AlertDialog.Builder(activity).create();
-        }
+        }*/
 //         版本检测方式2：带更新回调监听
         PgyUpdateManager.register(activity,
                 new UpdateManagerListener() {
                     @Override
                     public void onUpdateAvailable(final String result) {
+                        if(!activity.isFinishing())
+                            return;
                         final AppBean appBean = getAppBeanFromString(result);
                         int currentVersoin = getAppVersionCode(activity);
                         int remoteVersion = 0;
@@ -53,6 +55,7 @@ public class AppUpdate {
                         sb.append(activity.getString(R.string.update_content));
                         sb.append("\r\n");
                         sb.append(appBean.getReleaseNote());
+                        AlertDialog myDialog = new AlertDialog.Builder(activity).create();;
                         if (!myDialog.isShowing()) {
                             myDialog.show();
                             myDialog.getWindow().setContentView(R.layout.updatedlg);
